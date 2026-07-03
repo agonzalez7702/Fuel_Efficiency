@@ -1,0 +1,37 @@
+import java.util.Scanner; // Import the Scanner class from its ‘package'
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in); // Setup an object of the Scanner class
+        
+        System.out.println("This program calculates the fuel cost per 100 miles");
+        System.out.println("and how far a car can travel with a full tank of gas.");
+        System.out.println();
+        
+        //Use methods of the new Scanner object to get input. 
+        System.out.print("Enter the number of gallons in the tank (you may enter decimals, such as 12.5): ");
+        double gallons = in.nextDouble();
+        
+        System.out.print("Enter the fuel efficiency in miles for gallon (for example, 25.5): ");
+        double milesPerGallon = in.nextDouble();
+        
+        System.out.print("Enter the price of gas per gallon (for example, 5.79): ");
+        double pricePerGallon = in.nextDouble();
+        
+        
+        //Calculate the cost per 100 miles
+        double costPer100Miles = (100 / milesPerGallon) * pricePerGallon;
+        
+        //Calculate distance with a full tank
+        double distance = gallons * milesPerGallon;
+        
+        //Show results to user
+        System.out.printf("Fuel cost per 100 miles: $%.2f. %n", costPer100Miles); // User format specifier
+        System.out.printf("The car can travel %.2f miles on a full tank.%n", distance);
+
+        in.close();
+    }
+    
+}
